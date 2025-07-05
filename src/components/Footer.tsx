@@ -169,7 +169,7 @@ const Footer = () => {
 
         {/* Bottom Copyright */}
         <div className="border-t border-white/20 pt-8 mt-8 text-center text-white/60">
-          <p>&copy; 2024 BrightSmile Dental. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2025 BrightSmile Dental. All rights reserved. | Privacy Policy | Terms of Service</p>
           <p className="text-sm mt-2">Licensed to practice dentistry in the state of ST. License #D12345</p>
         </div>
       </div>
