@@ -48,15 +48,32 @@
 
     --radius: 0.75rem;
 
-    /* Dental-specific gradients */
+    /* Sophisticated gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--secondary) / 0.05));
+    --gradient-hero: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.08) 0%, 
+      hsl(var(--secondary) / 0.12) 25%,
+      hsl(var(--primary) / 0.05) 50%,
+      hsl(var(--secondary) / 0.08) 75%,
+      hsl(var(--primary) / 0.03) 100%);
+    --gradient-section: linear-gradient(180deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--primary) / 0.02) 50%, 
+      hsl(var(--background)) 100%);
+    --gradient-card: linear-gradient(145deg, 
+      hsl(var(--card)) 0%, 
+      hsl(var(--primary) / 0.03) 100%);
+    --gradient-glass: linear-gradient(145deg, 
+      hsl(var(--background) / 0.8) 0%, 
+      hsl(var(--background) / 0.4) 100%);
     
-    /* Professional shadows */
+    /* Enhanced shadows with multiple layers */
     --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 8px 30px -6px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --shadow-card: 0 8px 30px -6px hsl(var(--primary) / 0.15), 0 2px 8px -2px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4), 0 0 80px hsl(var(--primary-glow) / 0.2);
+    --shadow-float: 0 20px 40px -8px hsl(var(--primary) / 0.25), 0 8px 16px -4px hsl(var(--primary) / 0.15);
+    --shadow-inset: inset 0 2px 4px hsl(var(--primary) / 0.1);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,10 +149,42 @@
   /* Dental-specific component styles */
   .hero-gradient {
     background: var(--gradient-hero);
+    position: relative;
+  }
+  
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, hsl(var(--primary-glow) / 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .section-gradient {
+    background: var(--gradient-section);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .glass-effect {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
   }
   
   .card-shadow {
     box-shadow: var(--shadow-card);
+  }
+  
+  .float-shadow {
+    box-shadow: var(--shadow-float);
   }
   
   .glow-effect {
@@ -150,24 +199,75 @@
     transition: var(--transition-bounce);
   }
   
-  /* Button hover effects */
+  /* Enhanced button effects */
   .btn-hover-lift {
-    @apply transition-smooth hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-smooth hover:-translate-y-2 hover:shadow-xl;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Text gradients */
+  .btn-hover-glow {
+    @apply transition-smooth hover:shadow-glow;
+  }
+  
+  .btn-pulse {
+    animation: pulse-glow 2s infinite;
+  }
+  
+  /* Text effects */
   .text-gradient-primary {
-    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-primary-light to-primary-glow bg-clip-text text-transparent;
   }
   
-  /* Fade in animation */
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent;
+  }
+  
+  /* Animation classes */
   .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
   }
   
-  /* Scale on hover */
+  .fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .rotate-slow {
+    animation: rotate 20s linear infinite;
+  }
+  
+  /* Hover effects */
   .hover-scale {
     @apply transition-smooth hover:scale-105;
+  }
+  
+  .hover-scale-lg {
+    @apply transition-smooth hover:scale-110;
+  }
+  
+  .hover-tilt {
+    @apply transition-smooth hover:rotate-1;
+  }
+  
+  /* Decorative elements */
+  .decorative-blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    animation: blob 7s ease-in-out infinite;
+  }
+  
+  .decorative-dot {
+    @apply w-2 h-2 rounded-full bg-primary/20;
+    animation: twinkle 2s ease-in-out infinite alternate;
   }
 }
 
@@ -195,6 +295,17 @@
     }
   }
   
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   @keyframes bounceIn {
     0% {
       opacity: 0;
@@ -210,6 +321,63 @@
     100% {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes blob {
+    0%, 100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      transform: translateX(0px) translateY(0px);
+    }
+    25% {
+      border-radius: 58% 42% 75% 25% / 76% 24% 76% 24%;
+      transform: translateX(5px) translateY(-5px);
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+      transform: translateX(-5px) translateY(5px);
+    }
+    75% {
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+      transform: translateX(2px) translateY(-2px);
+    }
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--primary) / 0.4);
     }
   }
 }
