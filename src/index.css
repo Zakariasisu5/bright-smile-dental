@@ -206,7 +206,11 @@
   }
   
   .btn-hover-glow {
-    @apply transition-smooth hover:shadow-glow;
+    @apply transition-smooth;
+  }
+  
+  .btn-hover-glow:hover {
+    box-shadow: var(--shadow-glow);
   }
   
   .btn-pulse {
