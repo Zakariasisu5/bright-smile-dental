@@ -70,44 +70,60 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Enhanced Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Enhanced Unique Gallery Grid - Mobile First Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-3xl float-shadow hover-scale-lg cursor-pointer transition-all duration-700 fade-in-delay ${
-                image.featured ? 'lg:col-span-1 lg:row-span-1' : ''
+              className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl float-shadow hover-scale-lg cursor-pointer transition-all duration-700 fade-in-delay ${
+                image.featured && index === 0 
+                  ? 'sm:col-span-2 sm:row-span-2' 
+                  : image.featured && index === 1
+                  ? 'lg:col-span-2'
+                  : ''
               }`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Enhanced Image Container */}
-              <div className="relative h-80 overflow-hidden">
+              {/* Enhanced Image Container - Variable Heights for Unique Layout */}
+              <div className={`relative overflow-hidden ${
+                image.featured && index === 0 
+                  ? 'h-64 sm:h-96 lg:h-[500px]' 
+                  : image.featured && index === 1
+                  ? 'h-64 sm:h-80 lg:h-64'
+                  : 'h-64 sm:h-72 lg:h-80'
+              }`}>
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700 filter group-hover:brightness-110"
                 />
                 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                {/* Unique Diagonal Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 
-                {/* Enhanced Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                  {/* Category Badge */}
+                {/* Creative Hexagonal Pattern Overlay - Hidden on mobile */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-500 hidden sm:block" style={{
+                  backgroundImage: `radial-gradient(circle at 25px 25px, hsl(var(--primary-light)) 2px, transparent 2px)`,
+                  backgroundSize: '50px 50px'
+                }}></div>
+                
+                {/* Enhanced Content Overlay - Responsive */}
+                <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                  {/* Category Badge with Unique Shape */}
                   <div className="mb-3">
-                    <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-2xl text-sm font-bold border border-white/30">
+                    <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full sm:rounded-2xl text-xs sm:text-sm font-bold border border-white/30 shadow-lg">
                       {image.category}
                     </span>
                   </div>
                   
-                  {/* Description */}
-                  <p className="font-medium text-lg leading-tight mb-2">{image.alt}</p>
+                  {/* Description - Responsive text */}
+                  <p className="font-medium text-sm sm:text-base lg:text-lg leading-tight mb-2">{image.alt}</p>
                   
-                  {/* View More Button */}
-                  <div className="flex items-center text-sm font-semibold group/btn">
+                  {/* View More Button with Arrow Animation */}
+                  <div className="flex items-center text-xs sm:text-sm font-semibold group/btn">
                     View Details
                     <svg
-                      className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"
+                      className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -117,12 +133,16 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                {/* Featured Badge */}
+                {/* Creative Featured Badge - Unique Design */}
                 {image.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-secondary to-secondary-light text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg float-animation">
-                    ⭐ Featured
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-gradient-to-r from-secondary via-secondary-light to-secondary text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold shadow-lg float-animation border border-white/20">
+                    <span className="mr-1">⭐</span>
+                    <span className="hidden sm:inline">Featured</span>
                   </div>
                 )}
+
+                {/* Unique Corner Accent - Hidden on mobile */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-l-[30px] sm:border-l-[40px] border-l-primary/30 border-b-[30px] sm:border-b-[40px] border-b-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 hidden sm:block"></div>
               </div>
             </div>
           ))}

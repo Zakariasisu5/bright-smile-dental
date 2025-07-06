@@ -58,46 +58,72 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Enhanced Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Revolutionary Services Grid - Mobile First & Unique Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="card-gradient p-8 rounded-3xl float-shadow hover-scale-lg group transition-all duration-500 fade-in-delay"
+              className={`card-gradient p-6 sm:p-8 rounded-2xl sm:rounded-3xl float-shadow hover-scale-lg group transition-all duration-500 fade-in-delay relative overflow-hidden ${
+                index === 0 ? 'md:col-span-2 xl:col-span-1' : 
+                index === 3 ? 'md:col-span-2 xl:col-span-2' :
+                ''
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Enhanced Icon */}
-              <div className="text-6xl mb-6 float-animation group-hover:scale-125 transition-transform" style={{animationDelay: `${index * 0.3}s`}}>
-                {service.icon}
+              {/* Unique Background Pattern - Hidden on mobile */}
+              <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500 hidden sm:block">
+                <div className="w-full h-full rounded-full border-4 border-primary/20"></div>
+                <div className="absolute top-4 left-4 w-24 h-24 rounded-full border-2 border-secondary/30"></div>
+                <div className="absolute top-8 left-8 w-16 h-16 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10"></div>
               </div>
 
-              {/* Content */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-gradient-primary transition-all duration-300">
+              {/* Creative Side Accent Bar */}
+              <div className="absolute left-0 top-0 w-1 sm:w-2 h-full bg-gradient-to-b from-primary via-secondary to-primary-light opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              {/* Enhanced Icon with Unique Animation */}
+              <div className="relative z-10 mb-6">
+                <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6 float-animation group-hover:scale-125 transition-transform relative" style={{animationDelay: `${index * 0.3}s`}}>
+                  {service.icon}
+                  {/* Icon Glow Effect */}
+                  <div className="absolute inset-0 blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" style={{
+                    background: `radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)`
+                  }}></div>
+                </div>
+              </div>
+
+              {/* Content with Enhanced Typography */}
+              <div className="space-y-4 sm:space-y-6 relative z-10">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-gradient-primary transition-all duration-300">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                   {service.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-3">
+                {/* Enhanced Features List with Creative Bullets */}
+                <ul className="space-y-2 sm:space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center text-muted-foreground"
+                      className="flex items-center text-muted-foreground text-sm sm:text-base"
                     >
-                      <div className="w-2.5 h-2.5 bg-primary rounded-full mr-4 flex-shrink-0 group-hover:bg-primary-light transition-colors"></div>
+                      {/* Creative Animated Bullet */}
+                      <div className="relative mr-3 sm:mr-4 flex-shrink-0">
+                        <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-primary rounded-full group-hover:bg-primary-light transition-colors"></div>
+                        <div className="absolute inset-0 w-2 sm:w-2.5 h-2 sm:h-2.5 bg-primary rounded-full animate-ping opacity-0 group-hover:opacity-75"></div>
+                      </div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                {/* Enhanced Learn More Button */}
-                <button className="mt-8 text-primary font-bold hover:text-primary-light transition-smooth flex items-center group/btn">
-                  Learn More
+                {/* Unique Learn More Button with Creative Design */}
+                <button className="mt-6 sm:mt-8 text-primary font-bold hover:text-primary-light transition-smooth flex items-center group/btn relative">
+                  <span className="relative z-10">Learn More</span>
+                  {/* Button Background Animation */}
+                  <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 -m-2"></div>
                   <svg
-                    className="w-5 h-5 ml-2 group-hover/btn:translate-x-2 transition-transform"
+                    className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover/btn:translate-x-2 transition-transform relative z-10"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -111,6 +137,9 @@ const Services = () => {
                   </svg>
                 </button>
               </div>
+
+              {/* Hover Effects - Additional Creative Elements */}
+              <div className="absolute bottom-0 right-0 w-0 h-0 border-r-[20px] sm:border-r-[30px] border-r-primary/10 border-t-[20px] sm:border-t-[30px] border-t-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
           ))}
         </div>
