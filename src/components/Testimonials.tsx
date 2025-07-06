@@ -74,13 +74,13 @@ const Testimonials = () => {
           <div className="card-gradient rounded-3xl float-shadow overflow-hidden hover-scale group">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Enhanced Image */}
-              <div className="relative lg:order-2 overflow-hidden">
+              <div className="relative lg:order-2 overflow-hidden rounded-3xl">
                 <img
                   src={currentTest.image}
                   alt={`${currentTest.name} - Happy Patient`}
-                  className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700 rounded-3xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-secondary/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-secondary/20 rounded-3xl"></div>
               </div>
 
               {/* Enhanced Content */}

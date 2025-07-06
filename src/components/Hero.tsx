@@ -29,11 +29,10 @@ const Hero = () => {
           <div className="fade-in space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                <span className="text-gradient-primary drop-shadow-lg block sm:inline">Exceptional</span>{" "}
-                <span className="text-foreground block sm:inline">Dental Care</span>
+                <span className="text-gradient-primary drop-shadow-lg block sm:inline">Your Smile,</span>{" "}
+                <span className="text-foreground block sm:inline">Our</span>
                 <br className="hidden sm:block" />
-                <span className="text-foreground block sm:inline">for the </span>
-                <span className="text-gradient-secondary block sm:inline">Whole Family</span>
+                <span className="text-gradient-secondary block sm:inline">Priority</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light px-4 sm:px-0">
                 Providing personalized and comprehensive dental services to patients of all ages 
@@ -48,7 +47,7 @@ const Hero = () => {
                 size="xl"
                 className="btn-hover-lift btn-pulse bg-primary hover:bg-primary-light text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-8 rounded-2xl font-semibold shadow-lg hover:shadow-2xl transform transition-all duration-300 w-full sm:w-auto"
               >
-                Book Appointment
+                Book Your Appointment
               </Button>
               <Button
                 variant="outline"

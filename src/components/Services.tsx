@@ -1,40 +1,22 @@
 const Services = () => {
   const services = [
     {
-      title: "Teeth Cleaning",
-      description: "Professional dental cleanings to maintain optimal oral health and prevent gum disease.",
-      icon: "🦷",
-      features: ["Deep cleaning", "Plaque removal", "Gum health assessment", "Fluoride treatment"]
-    },
-    {
       title: "Teeth Whitening",
-      description: "Safe, effective whitening treatments to brighten your smile and boost confidence.",
+      description: "Professional whitening treatments for a brighter, more confident smile.",
       icon: "✨",
-      features: ["Professional whitening", "Custom trays", "Safe bleaching", "Lasting results"]
-    },
-    {
-      title: "Dental Implants",
-      description: "Permanent tooth replacement solution that looks and feels like natural teeth.",
-      icon: "🔧",
-      features: ["Titanium implants", "Crown placement", "Bone grafting", "Full restoration"]
+      features: ["Professional bleaching", "Custom trays", "Same-day results", "Long-lasting brightness"]
     },
     {
       title: "Orthodontics",
-      description: "Straighten your teeth with modern braces and clear aligners for all ages.",
-      icon: "😁",
-      features: ["Traditional braces", "Clear aligners", "Retainer therapy", "Adult orthodontics"]
+      description: "Modern braces and clear aligners to straighten teeth for all ages.",
+      icon: "😁", 
+      features: ["Clear aligners", "Traditional braces", "Adult orthodontics", "Retainer therapy"]
     },
     {
-      title: "Root Canal Therapy",
-      description: "Save infected teeth with gentle, pain-free root canal treatments.",
-      icon: "🩺",
-      features: ["Pain relief", "Infection removal", "Tooth preservation", "Crown protection"]
-    },
-    {
-      title: "Cosmetic Dentistry",
-      description: "Transform your smile with veneers, crowns, and aesthetic dental procedures.",
-      icon: "💎",
-      features: ["Porcelain veneers", "Dental crowns", "Smile makeovers", "Bonding"]
+      title: "Dental Implants",
+      description: "Permanent tooth replacement that looks and feels completely natural.",
+      icon: "🦷",
+      features: ["Titanium implants", "Natural appearance", "Bone preservation", "Lifetime solution"]
     }
   ];
 
@@ -58,17 +40,13 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Revolutionary Services Grid - Mobile First & Unique Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
+        {/* Simplified Services Grid - 3 Column Focus */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`card-gradient p-6 sm:p-8 rounded-2xl sm:rounded-3xl float-shadow hover-scale-lg group transition-all duration-500 fade-in-delay relative overflow-hidden ${
-                index === 0 ? 'md:col-span-2 xl:col-span-1' : 
-                index === 3 ? 'md:col-span-2 xl:col-span-2' :
-                ''
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="card-gradient p-8 rounded-3xl float-shadow hover-scale-lg group transition-all duration-500 fade-in-delay relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Unique Background Pattern - Hidden on mobile */}
               <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500 hidden sm:block">

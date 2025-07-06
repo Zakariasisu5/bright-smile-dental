@@ -36,10 +36,10 @@ const About = () => {
         {/* Enhanced Section Header */}
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-            <span className="text-gradient-primary">About Us</span>
+            <span className="text-gradient-primary">About the Doctor</span>
           </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Meet our dedicated team committed to providing exceptional dental care 
+            Meet Dr. Sarah Johnson, our dedicated dental professional committed to providing exceptional care 
             with a personal touch in a welcoming environment.
           </p>
         </div>

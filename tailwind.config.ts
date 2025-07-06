@@ -36,6 +36,10 @@ export default {
 					light: 'hsl(var(--secondary-light))',
 					dark: 'hsl(var(--secondary-dark))'
 				},
+				'accent-gold': {
+					DEFAULT: 'hsl(var(--accent-gold))',
+					dark: 'hsl(var(--accent-gold-dark))'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -68,8 +72,10 @@ export default {
 				}
 			},
 			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
-				sans: ['Montserrat', 'system-ui', 'sans-serif']
+				inter: ['Inter', 'sans-serif'],
+				lato: ['Lato', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				sans: ['Inter', 'Lato', 'Poppins', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

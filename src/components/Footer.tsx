@@ -24,22 +24,44 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-gradient-to-br from-primary via-primary-light to-secondary text-white relative overflow-hidden">
+      {/* Soft decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="decorative-blob absolute top-20 right-10 w-32 h-32 opacity-10"></div>
+        <div className="decorative-blob absolute bottom-10 left-20 w-24 h-24 opacity-15" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo & Contact */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">🦷</span>
+              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-xl">🦷</span>
               </div>
               <span className="text-2xl font-bold">BrightSmile Dental</span>
             </div>
             
-            <p className="text-white/80 leading-relaxed max-w-md">
+            <p className="text-white/90 leading-relaxed max-w-md">
               Providing exceptional dental care for the whole family with personalized 
               treatment plans and the latest technology in a comfortable environment.
             </p>
+
+            {/* Trust Elements */}
+            <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                <span className="text-accent-gold text-lg">⭐</span>
+                <span className="text-sm font-medium">4.9/5 Rating</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                <span className="text-accent-gold text-lg">🏛️</span>
+                <span className="text-sm font-medium">ADA Member</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                <span className="text-accent-gold text-lg">🔒</span>
+                <span className="text-sm font-medium">Secure Booking</span>
+              </div>
+            </div>
 
             <div className="space-y-3 text-white/90">
               <div className="flex items-center space-x-3">
@@ -81,21 +103,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Newsletter Signup */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <button
-                    onClick={() => scrollToSection("#services")}
-                    className="text-white/80 hover:text-white transition-smooth text-left"
-                  >
-                    {service}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
+            <p className="text-white/90 text-sm mb-4">
+              Subscribe to our newsletter for dental tips, special offers, and practice updates.
+            </p>
+            <div className="space-y-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+              />
+              <button className="w-full bg-accent-gold hover:bg-accent-gold-dark text-primary font-semibold px-4 py-3 rounded-lg transition-smooth shadow-lg hover:shadow-xl">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
 

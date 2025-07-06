@@ -2,32 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BrightSmile Dental Design System - Professional, calming dental colors */
+  /* BrightSmile Dental Design System - Modern, calming, trust-building colors */
 
-@layer base {
-  :root {
-    /* Base colors - Clean whites and soft backgrounds */
-    --background: 0 0% 100%;
-    --foreground: 212 25% 15%;
+  @layer base {
+    :root {
+      /* Base colors - Pure whites and soft backgrounds */
+      --background: 0 0% 100%;
+      --foreground: 215 25% 15%;
 
-    /* Card and surface colors */
-    --card: 0 0% 100%;
-    --card-foreground: 212 25% 15%;
+      /* Card and surface colors */
+      --card: 0 0% 100%;
+      --card-foreground: 215 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 212 25% 15%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 215 25% 15%;
 
-    /* Primary - Professional dental blue/teal */
-    --primary: 185 85% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 185 85% 45%;
-    --primary-glow: 185 85% 65%;
+      /* Primary - Professional sky blue */
+      --primary: 200 100% 50%;
+      --primary-foreground: 0 0% 100%;
+      --primary-light: 200 100% 60%;
+      --primary-glow: 200 80% 70%;
 
-    /* Secondary - Soft mint green for freshness */
-    --secondary: 158 45% 65%;
-    --secondary-foreground: 212 25% 15%;
-    --secondary-light: 158 45% 75%;
-    --secondary-dark: 158 45% 55%;
+      /* Secondary - Soft pastel green for freshness */
+      --secondary: 150 40% 70%;
+      --secondary-foreground: 215 25% 15%;
+      --secondary-light: 150 40% 80%;
+      --secondary-dark: 150 40% 60%;
+
+      /* Accent - Soft gold for trust elements */
+      --accent-gold: 45 100% 75%;
+      --accent-gold-dark: 45 100% 65%;
 
     /* Muted colors for subtle elements */
     --muted: 210 15% 96%;
@@ -141,7 +145,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-montserrat;
+    @apply bg-background text-foreground font-inter;
   }
 }
 
