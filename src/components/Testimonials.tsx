@@ -1,5 +1,5 @@
 import { useState } from "react";
-import testimonialCouple from "@/assets/testimonial-couple.jpg";
+import testimonialCouple from "@/assets/patient-dentist-examination.jpg";
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);

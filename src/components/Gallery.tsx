@@ -1,9 +1,9 @@
-import galleryReception from "@/assets/gallery-reception.jpg";
-import galleryTreatmentRoom from "@/assets/gallery-treatment-room.jpg";
-import gallerySmileTransformation from "@/assets/gallery-smile-transformation.jpg";
-import galleryEquipment from "@/assets/gallery-equipment.jpg";
-import galleryImplants from "@/assets/gallery-implants.jpg";
-import galleryOrthodontics from "@/assets/gallery-orthodontics.jpg";
+import galleryReception from "@/assets/dental-team-examination.jpg";
+import galleryTreatmentRoom from "@/assets/dental-procedure-lighting.jpg";
+import gallerySmileTransformation from "@/assets/patient-dentist-examination.jpg";
+import galleryEquipment from "@/assets/dental-checkup-close.jpg";
+import galleryImplants from "@/assets/happy-patient-dental-chair.jpg";
+import galleryOrthodontics from "@/assets/dr-sarah-johnson-new.jpg";
 
 const Gallery = () => {
   const galleryImages = [

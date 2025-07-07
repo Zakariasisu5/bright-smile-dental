@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroFamily from "@/assets/hero-family.jpg";
+import heroFamily from "@/assets/happy-patient-dental-chair.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -90,7 +90,7 @@ const Hero = () => {
               
               <img
                 src={heroFamily}
-                alt="Happy family with beautiful smiles"
+                alt="Happy patient in modern dental chair with professional care"
                 className="relative w-full h-auto rounded-2xl sm:rounded-3xl shadow-2xl object-cover group-hover:scale-[1.02] transition-transform duration-500 hover-tilt"
               />
               

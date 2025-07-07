@@ -1,4 +1,4 @@
-import drSarahJohnson from "@/assets/dr-sarah-johnson.jpg";
+import drSarahJohnson from "@/assets/dr-sarah-johnson-new.jpg";
 
 const About = () => {
   const values = [
