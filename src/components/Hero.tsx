@@ -12,6 +12,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="pt-16 pb-8 sm:pb-12 lg:pb-20 hero-gradient min-h-screen flex items-center relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{
+          backgroundImage: `url(${heroFamily})`,
+        }}
+      ></div>
+      
       {/* Enhanced Decorative background elements - mobile responsive */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="decorative-blob absolute top-10 sm:top-20 left-2 sm:left-10 w-20 sm:w-32 h-20 sm:h-32 opacity-20"></div>
