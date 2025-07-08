@@ -12,13 +12,20 @@ const Hero = () => {
 
   return (
     <section id="home" className="pt-16 pb-12 sm:pb-16 lg:pb-24 hero-gradient min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Image with better opacity control */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-3 sm:opacity-5"
-        style={{
-          backgroundImage: `url(${heroFamily})`,
-        }}
-      ></div>
+      {/* Enhanced Background Image with better fit and overlay */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          style={{
+            backgroundImage: `url(${heroFamily})`,
+            backgroundPosition: 'center 40%',
+            filter: 'brightness(0.3) contrast(1.1)',
+          }}
+        ></div>
+        {/* Enhanced gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/40"></div>
+      </div>
       
       {/* Enhanced Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
