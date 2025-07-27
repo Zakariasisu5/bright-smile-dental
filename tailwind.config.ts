@@ -72,10 +72,12 @@ export default {
 				}
 			},
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
-				lato: ['Lato', 'sans-serif'],
-				poppins: ['Poppins', 'sans-serif'],
-				sans: ['Inter', 'Lato', 'Poppins', 'system-ui', 'sans-serif']
+				montserrat: ['Montserrat', 'sans-serif'],
+				'open-sans': ['Open Sans', 'sans-serif'],
+				sans: ['Montserrat', 'Open Sans', 'system-ui', 'sans-serif']
+			},
+			fontWeight: {
+				bold: '700'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
