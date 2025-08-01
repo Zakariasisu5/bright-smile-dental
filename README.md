@@ -7,8 +7,7 @@ URL: https://bright-smile-dental-ashy.vercel.app/
 
 ---
 
-🌟 Key Features:
-
+🌟 Key Features: *
 Responsive Design – Works perfectly across devices (phones, tablets, desktops).
 
 Service Highlights – Clearly presents the clinic's main services (cleaning, fillings, whitening, etc).
@@ -20,7 +19,6 @@ Contact Section – Quick contact form with address, phone, and Google Maps.
 Modern UI/UX – Clean layout, calm colors, and easy navigation to build patient trust.
 
 SEO-Optimized – Built with performance and visibility in mind.
-
 
 
 ---
